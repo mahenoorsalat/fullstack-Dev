@@ -1,0 +1,37 @@
+{
+  "name": "my-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.0.1",
+    "@fortawesome/free-brands-svg-icons": "^7.0.1",
+    "@fortawesome/free-solid-svg-icons": "^7.0.1",
+    "@fortawesome/react-fontawesome": "^3.0.2",
+    "framer": "^2.4.1",
+    "lucide-react": "^0.544.0",
+    "motion": "^12.23.16",
+    "next": "15.5.3",
+    "next-themes": "^0.4.6",
+    "nodemailer": "^7.0.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@next/react-refresh-utils": "^15.5.3",
+    "@tailwindcss/postcss": "^4",
+    "@types/estree": "^1.0.8",
+    "@types/json-schema": "^7.0.15",
+    "@types/json5": "^0.0.30",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.3",
+    "react-refresh": "^0.17.0",
+    "tailwindcss": "^4"
+  }
+}
