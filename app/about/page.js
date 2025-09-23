@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from 'next/head';
+import Image from 'next/image';
 
 // Solid icons
 import { faArrowRight, faEnvelope, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
@@ -218,8 +219,13 @@ const About = () => {
                 </div>  
                 {/* Profile Picture */}
                 <div className="w-40 h-40 bg-white/30 dark:bg-gray-700/30 backdrop-blur-xl rounded-full border border-gray-200 dark:border-gray-600 overflow-hidden hover:scale-105 transition-all duration-500 flex-shrink-0">
-                 <img src='./profile.jpeg' alt="Profile" className="w-full h-full object-cover"/>
-                </div>
+<Image 
+  src="/profile.jpeg" 
+  alt="Profile" 
+  width={200} 
+  height={200} 
+  className="rounded-full object-cover" 
+/>                </div>
               </div>
             </section>
        

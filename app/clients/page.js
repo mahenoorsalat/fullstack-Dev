@@ -9,43 +9,40 @@ import {
   User,
   Mail,
   MessageSquare,
-  MapPin,
 } from "lucide-react";
 import Head from "next/head";
+import Image from "next/image"; // ✅ use next/image
 
 // ✅ Component Name should be PascalCase
 const Clients = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-const [formData, setFormData] = useState({
-  name: "",
-  email: "",
-  company: "",
-  message: "",
-  budget: "",   // ✅ added
-});
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+    budget: "",
+  });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
   const contactFormRef = useRef(null);
 
   useEffect(() => {
-    // Trigger load animation
-    const timer = setTimeout(() => setIsLoaded(true), 50); // slightly faster
+    const timer = setTimeout(() => setIsLoaded(true), 50);
     const handleMouseMove = (e) => {
       setMousePosition({
         x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: (e.clientY / window.innerHeight) * 2 - 1
+        y: (e.clientY / window.innerHeight) * 2 - 1,
       });
     };
 
- 
-
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -73,7 +70,7 @@ const [formData, setFormData] = useState({
 
       if (response.ok) {
         setSubmitStatus("success");
-        setFormData({ name: "", email: "", company: "", message: "" });
+        setFormData({ name: "", email: "", company: "", message: "", budget: "" });
       } else {
         setSubmitStatus("error");
       }
@@ -100,12 +97,10 @@ const [formData, setFormData] = useState({
         featured ? "md:col-span-2" : ""
       }`}
     >
-      {/* Background decoration for featured testimonials */}
       {featured && (
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50 dark:from-blue-900/20 dark:via-transparent dark:to-purple-900/20 transition-opacity duration-500 group-hover:opacity-70" />
       )}
 
-      {/* Quote icon */}
       <div
         className={`${
           featured
@@ -113,12 +108,9 @@ const [formData, setFormData] = useState({
             : "text-blue-500 dark:text-blue-400"
         } mb-6 relative z-10`}
       >
-        <Quote
-          className={`${featured ? "w-8 h-8" : "w-6 h-6"} fill-current`}
-        />
+        <Quote className={`${featured ? "w-8 h-8" : "w-6 h-6"} fill-current`} />
       </div>
 
-      {/* Star rating */}
       <div className="flex items-center mb-4 relative z-10">
         {[...Array(5)].map((_, i) => (
           <Star
@@ -135,20 +127,24 @@ const [formData, setFormData] = useState({
         </span>
       </div>
 
-      {/* Feedback */}
       <p
         className={`text-gray-600 dark:text-gray-300 mb-6 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 leading-relaxed relative z-10 ${
           featured ? "text-lg" : "text-base"
         }`}
       >
-        "{feedback}"
+        &quot;{feedback}&quot;
       </p>
 
-      {/* Author info */}
       <div className="flex items-center space-x-4 relative z-10">
         <div className="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 rounded-full flex items-center justify-center overflow-hidden">
           {avatar ? (
-            <img src={avatar} alt={name} className="w-full h-full object-cover" />
+            <Image
+              src={avatar}
+              alt={name}
+              width={48}
+              height={48}
+              className="w-full h-full object-cover"
+            />
           ) : (
             <span className="text-white font-bold text-lg">{name[0]}</span>
           )}
@@ -168,7 +164,6 @@ const [formData, setFormData] = useState({
         </div>
       </div>
 
-      {/* Featured badge */}
       {featured && (
         <div className="absolute top-4 right-4 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold">
           Featured
@@ -177,90 +172,102 @@ const [formData, setFormData] = useState({
     </div>
   );
 
+
 const testimonials = [
-    {
-      name: "Alexene Tomate",
-      avatar: "./testimonial-11.png",
-      role: "Open Source Enthusiastic",
-      company: "Philippines",
-      feedback: "I had the pleasure of working with Mahenoor Salat on the development of the ServeStream website for our digital marketing agency. I can confidently say she's a promising frontend web developer. Mahenoor is not only quick to execute tasks but also incredibly proactive, constantly volunteering to take on responsibilities and delivering results efficiently. She consistently offered thoughtful recommendations and improvements that elevated the project. Her initiative and sense of ownership is admirable. If you're looking for someone who combines technical skill with a strong work ethic and a collaborative spirit, Mahenoor is a fantastic choice. I look forward to seeing all the amazing work she continues to produce!",
-      rating: 5,
-      featured: true
-    }, 
-    {
-      name: "Dr. Bruno Woltzenlogel Paleo",
-      avatar: "./testimonial-6.jpg",
-      role: "AOSSIE Founder - GSOC",
-      company: "Australia",
-      feedback: "Mahenoor participated in the apprenticeship program of The Stable Order, an organization dedicated to bringing stability to decentralized finance. She replaced the landing page of our hodlCoin staking protocol, which used to be just a jekyll page, by a completely new and nice-looking page using v0.dev, next.js and tailwind CSS. During the process, Mahenoor was attentive to feedback and persistent to achieve the end goal of her project. We are grateful for her contribution and we look forward to having her as a long-term contributor.",
-      rating: 5,
-      featured: true
-    }, 
-    {
-      name: "Sajiya Salat",
-      avatar: "./testimonial-3.png",
-      role: "CEO - RKWEB",
-      company: "India",
-      feedback: "I am pleased to recommend Mahenoor for any web development and design role. Throughout our time working together, Mahenoor consistently demonstrated exceptional technical skills, creativity, and a deep understanding of both web development and design principles.",
-      rating: 5
-    },
-    {
-      name: "Nathan wong",
-      avatar: "./testimonial-1.jpg",
-      role: "Software Developer",
-      company: "United States",
-      feedback: "It was a pleasure working with Mahenoor. She has exceeded my expectations and went above and beyond to provide a better user experience to our users. Her creativity and attention to detail provide users with an overall great experience.",
-      rating: 5
-    },
-    {
-      name: "Dmytry",
-      avatar: "./testimonial-8.png",
-      role: "Project Manager",
-      company: "UKraine",
-      feedback: "I'm so surprised again. She is very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
-      rating: 5
-    },
-    {
-      name: "JAKECOVINGTON",
-      avatar: "./testimonial-9.png",
-      role: "CEO",
-      company: "United States",
-      feedback: "Working with Mahenoor transformed our entire product experience. Her design engineering expertise helped us launch 3x faster while maintaining the highest quality standards.",
-      rating: 5
-    },
-    {
-      name: "Dhrumil",
-      avatar: "./testimonial-7.jpg",
-      role: "Full Stack Dev",
-      company: "United States",
-      feedback: "Mahenoor moved seamlessly from planning to implementation, showing her strong development skills. I recommend Mahenoor to anyone seeking a UI/UX professional. Her technical skills and collaborative approach make her a valuable team member.",
-      rating: 5
-    },
-    {
-      name: "Radu Marias",
-      avatar: "./testimonial-4.jpg",
-      role: "CEO - Xorio",
-      company: "Romania",
-      feedback: "I had the pleasure of working with Mahenoor on several critical projects, and her expertise in web development, SEO, and design was exceptional. She created professional, user-friendly websites translating complex technical concepts into clear and visually appealing platforms.",
-      rating: 5
-    },
-    {
-      name: "Kristian",
-      avatar: "./testimonial-10.png",
-      role: "Software Dev",
-      company: "United Kingdom",
-      feedback: "It was a pleasure working with Mahenoor on our open source project. She transformed our ideas into a better user experience through meticulous UI/UX improvements. Her proposals, documentation, and mockups helped shape our final design decisions.",
-      rating: 5
-    },
-    {
-      name: "Mels",
-      avatar: "./testimonial-5.png",
-      role: "Founder - Zoomerang",
-      company: "United States",
-      feedback: "professional did without time delay and good idea of what I needed. thank you for your hard work",
-      rating: 5
-    },
-  ];
+  {
+    name: "Alexene Tomate",
+    avatar: "/testimonial-11.png",  // ✅
+    role: "Open Source Enthusiastic",
+    company: "Philippines",
+    feedback:
+      "I had the pleasure of working with Mahenoor Salat on the development of the ServeStream website for our digital marketing agency. I can confidently say she&apos;s a promising frontend web developer. Mahenoor is not only quick to execute tasks but also incredibly proactive, constantly volunteering to take on responsibilities and delivering results efficiently. She consistently offered thoughtful recommendations and improvements that elevated the project. Her initiative and sense of ownership is admirable. If you&apos;re looking for someone who combines technical skill with a strong work ethic and a collaborative spirit, Mahenoor is a fantastic choice. I look forward to seeing all the amazing work she continues to produce!",
+    rating: 5,
+    featured: true,
+  },
+  {
+    name: "Dr. Bruno Woltzenlogel Paleo",
+    avatar: "/testimonial-6.jpg",  // ✅
+    role: "AOSSIE Founder - GSOC",
+    company: "Australia",
+    feedback:
+      "Mahenoor participated in the apprenticeship program of The Stable Order, an organization dedicated to bringing stability to decentralized finance. She replaced the landing page of our hodlCoin staking protocol, which used to be just a jekyll page, by a completely new and nice-looking page using v0.dev, next.js and tailwind CSS. During the process, Mahenoor was attentive to feedback and persistent to achieve the end goal of her project. We are grateful for her contribution and we look forward to having her as a long-term contributor.",
+    rating: 5,
+    featured: true,
+  },
+  {
+    name: "Sajiya Salat",
+    avatar: "/testimonial-3.png",  // ✅
+    role: "CEO - RKWEB",
+    company: "India",
+    feedback:
+      "I am pleased to recommend Mahenoor for any web development and design role. Throughout our time working together, Mahenoor consistently demonstrated exceptional technical skills, creativity, and a deep understanding of both web development and design principles.",
+    rating: 5,
+  },
+  {
+    name: "Nathan wong",
+    avatar: "/testimonial-1.jpg",  // ✅ fixed
+    role: "Software Developer",
+    company: "United States",
+    feedback:
+      "It was a pleasure working with Mahenoor. She has exceeded my expectations and went above and beyond to provide a better user experience to our users. Her creativity and attention to detail provide users with an overall great experience.",
+    rating: 5,
+  },
+  {
+    name: "Dmytry",
+    avatar: "/testimonial-8.png",  // ✅ fixed
+    role: "Project Manager",
+    company: "Ukraine",
+    feedback:
+      "I&apos;m so surprised again. She&apos;s very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
+    rating: 5,
+  },
+  {
+    name: "JAKECOVINGTON",
+    avatar: "/testimonial-9.png",  // ✅ fixed
+    role: "CEO",
+    company: "United States",
+    feedback:
+      "Working with Mahenoor transformed our entire product experience. Her design engineering expertise helped us launch 3x faster while maintaining the highest quality standards.",
+    rating: 5,
+  },
+  {
+    name: "Dhrumil",
+    avatar: "/testimonial-7.jpg",  // ✅ fixed
+    role: "Full Stack Dev",
+    company: "United States",
+    feedback:
+      "Mahenoor moved seamlessly from planning to implementation, showing her strong development skills. I recommend Mahenoor to anyone seeking a UI/UX professional. Her technical skills and collaborative approach make her a valuable team member.",
+    rating: 5,
+  },
+  {
+    name: "Radu Marias",
+    avatar: "/testimonial-4.jpg",  // ✅ fixed
+    role: "CEO - Xorio",
+    company: "Romania",
+    feedback:
+      "I had the pleasure of working with Mahenoor on several critical projects, and her expertise in web development, SEO, and design was exceptional. She created professional, user-friendly websites translating complex technical concepts into clear and visually appealing platforms.",
+    rating: 5,
+  },
+  {
+    name: "Kristian",
+    avatar: "/testimonial-10.png",  // ✅ fixed
+    role: "Software Dev",
+    company: "United Kingdom",
+    feedback:
+      "It was a pleasure working with Mahenoor on our open source project. She transformed our ideas into a better user experience through meticulous UI/UX improvements. Her proposals, documentation, and mockups helped shape our final design decisions.",
+    rating: 5,
+  },
+  {
+    name: "Mels",
+    avatar: "/testimonial-5.png",  // ✅ fixed
+    role: "Founder - Zoomerang",
+    company: "United States",
+    feedback:
+      "professional did without time delay and good idea of what I needed. thank you for your hard work",
+    rating: 5,
+  },
+];
+
 
 
   return (

@@ -124,7 +124,7 @@ const Home = () => {
       avatar: "./testimonial-8.png",
       role: "Project Manager",
       company: "UKraine",
-      feedback: "I'm so surprised again. She is very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
+      feedback: "I&apos;m so surprised again. She&apos;s very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
       rating: 5
     },
     {
