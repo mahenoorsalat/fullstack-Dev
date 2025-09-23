@@ -111,30 +111,33 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: "Dr. Bruno Woltzenlogel Paleo",
-      avatar: "./testimonial-6.jpg",
-      role: "AOSSIE Founder - GSOC",
-      company: "Australia",
-      feedback: "Mahenoor participated in the apprenticeship program of The Stable Order...",
-      rating: 5,
-      featured: true
-    },
-    {
-      name: "Dmytry",
-      avatar: "./testimonial-8.png",
-      role: "Project Manager",
-      company: "UKraine",
-      feedback: "I&apos;m so surprised again. She&apos;s very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
-      rating: 5
-    },
-    {
-      name: "JAKECOVINGTON",
-      avatar: "./testimonial-9.png",
-      role: "CEO",
-      company: "United States",
-      feedback: "Working with Mahenoor transformed our entire product experience...",
-      rating: 5
-    },
+    name: "Dr. Bruno Woltzenlogel Paleo",
+    avatar: "/testimonial-6.jpg",  // ✅
+    role: "AOSSIE Founder - GSOC",
+    company: "Australia",
+    feedback:
+      "Mahenoor participated in the apprenticeship program of The Stable Order, an organization dedicated to bringing stability to decentralized finance. She replaced the landing page of our hodlCoin staking protocol, which used to be just a jekyll page, by a completely new and nice-looking page using v0.dev, next.js and tailwind CSS. During the process, Mahenoor was attentive to feedback and persistent to achieve the end goal of her project. We are grateful for her contribution and we look forward to having her as a long-term contributor.",
+    rating: 5,
+    featured: true,
+  },
+     {
+    name: "Dmytry",
+    avatar: "/testimonial-8.png",  // ✅ fixed
+    role: "Project Manager",
+    company: "Ukraine",
+    feedback:
+      "I&apos;m so surprised again. She&apos;s very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
+    rating: 5,
+  },
+     {
+    name: "JAKECOVINGTON",
+    avatar: "/testimonial-9.png",  // ✅ fixed
+    role: "CEO",
+    company: "United States",
+    feedback:
+      "Working with Mahenoor transformed our entire product experience. Her design engineering expertise helped us launch 3x faster while maintaining the highest quality standards.",
+    rating: 5,
+  },
   ];
 
   return (
