@@ -183,10 +183,10 @@ const Home = () => {
               </div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/0 via-blue-500/5 dark:via-blue-400/5 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10 flex items-center space-x-2">
-                <span className="text-sm font-bold text-gray-900 dark:text-gray-100">Client Love</span>
+                <span className="text-sm font-bold text-gray-900 dark:text-gray-100">Available for Work</span>
                 <div className="w-px h-4 bg-blue-300/70 dark:bg-blue-600/70" />
                 <span className="text-sm text-blue-700 dark:text-blue-300 transition-colors duration-300">
-                  What they say
+                 Hire now
                 </span>
               </div>
             </div>
