@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const Footer = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -11,11 +12,11 @@ const Footer = () => {
   const router = useRouter();
 
 const FiverrIcon = () => (
- <img src='./fiverr.svg' className='w-4 h-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'/>
+ <Image src='/fiverr.svg' alt="Fiverr" width={16} height={16} className='w-4 h-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'/>
 );
 
 const UpworkIcon = () => (
- <img src='./upwork.svg' className='w-4 h-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'/>
+ <Image src='/upwork.svg' alt="Upwork" width={16} height={16} className='w-4 h-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'/>
 );
 
   useEffect(() => {

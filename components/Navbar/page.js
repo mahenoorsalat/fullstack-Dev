@@ -21,32 +21,51 @@ const Navbar = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const NavItem = ({ icon, label, href }) => {
-    const isActive = pathname === href;
+const NavItem = ({ icon, label, href }) => {
+  const isActive = pathname === href;
 
-    return (
-      <Link href={href}>
-        <motion.div
-          initial={{ scale: 1 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className={`group flex flex-col sm:flex-row items-center justify-center sm:justify-start px-3 sm:px-4 py-2 rounded-full cursor-pointer border ${
+  return (
+    <Link href={href}>
+      <motion.div
+        initial={{ scale: 1, opacity: 0.9 }}
+        whileHover={{
+          scale: 1.15,
+          opacity: 1,
+          backgroundColor: theme === "dark" ? "rgba(55,65,81,0.8)" : "rgba(239,239,239,0.9)",
+          boxShadow: theme === "dark"
+            ? "0 4px 15px rgba(255,255,255,0.15)"
+            : "0 4px 15px rgba(0,0,0,0.15)",
+        }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        className={`group flex flex-col sm:flex-row items-center justify-center sm:justify-start 
+          px-3 sm:px-4 py-2 rounded-full cursor-pointer border
+          transition-colors duration-300
+          ${
             isActive
-              ? "bg-[#DFDFDF] text-white dark:bg-gray-700 dark:text-gray-100"
-              : "border-transparent text-gray-700 hover:bg-[#EFEFEF] hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
+              ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md"
+              : "border-transparent text-gray-700 dark:text-gray-300"
+          }`}
+      >
+        <div
+          className={`flex items-center justify-center w-6 h-6 duration-300 ${
+            isActive ? "text-white" : "text-gray-700 dark:text-gray-300"
           }`}
         >
-          <div className="flex items-center justify-center w-6 h-6 text-gray-700 dark:text-gray-300 duration-300">
-            {icon}
-          </div>
-          <span className="text-sm font-medium mt-1 sm:mt-0 sm:ml-2 hidden sm:inline-block">
-            {label}
-          </span>
-        </motion.div>
-      </Link>
-    );
-  };
+          {icon}
+        </div>
+        <span
+          className={`text-sm font-medium mt-1 sm:mt-0 sm:ml-2 hidden sm:inline-block ${
+            isActive ? "text-white" : ""
+          }`}
+        >
+          {label}
+        </span>
+      </motion.div>
+    </Link>
+  );
+};
+
 
   return (
     <>

@@ -308,7 +308,7 @@ const testimonials = [
         />
         <meta
           name="twitter:description"
-          content="Read reviews and feedback from clients worldwide about Mahenoor Salat’s work as a Web & App Developer, UI/UX Designer, SEO Optimizer, and Video Editor."
+          content="Read reviews and feedback from clients worldwide about Mahenoor Salat&apos;s work as a Web & App Developer, UI/UX Designer, SEO Optimizer, and Video Editor."
         />
         <meta
           name="twitter:image"

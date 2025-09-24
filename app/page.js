@@ -6,6 +6,7 @@ import { ChevronRight, ExternalLink, Star, Quote } from 'lucide-react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -39,10 +40,11 @@ const Home = () => {
     >
       <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 relative overflow-hidden">
         {image && (
-          <img
+          <Image
             src={image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 "
+            fill
+            className="w-full h-full object-cover object-center transition-transform duration-500 "
           />
         )}
       </div>
@@ -92,7 +94,7 @@ const Home = () => {
 
       <div className="flex items-center space-x-4">
         <div className="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 rounded-full flex items-center justify-center overflow-hidden">
-          {avatar ? <img src={avatar} alt={name} className="w-full h-full object-cover" /> : <span className="text-white font-bold text-lg">{name[0]}</span>}
+          {avatar ? <Image src={avatar} alt={name} width={48} height={48} className="w-full h-full object-cover" /> : <span className="text-white font-bold text-lg">{name[0]}</span>}
         </div>
         <div>
           <p className="text-base font-semibold text-gray-900 dark:text-gray-100">{name}</p>
@@ -205,7 +207,7 @@ const Home = () => {
                 Building bridges between design and code
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
-                Hi, I'm <strong>Mahenoor Salat</strong> — a passionate <strong>UI/UX designer</strong>, <strong>frontend & backend developer</strong>, and <strong>SEO optimizer</strong>. I build websites that are visually engaging, technically robust, and optimized for search engines.
+                Hi, I&apos;m <strong>Mahenoor Salat</strong> — a passionate <strong>UI/UX designer</strong>, <strong>frontend & backend developer</strong>, and <strong>SEO optimizer</strong>. I build websites that are visually engaging, technically robust, and optimized for search engines.
               </p>
 
               {/* About Me Button */}
@@ -215,7 +217,7 @@ const Home = () => {
                 className="group inline-flex items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-full px-4 py-3 border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 mx-auto"
               >
                 <div className="w-10 h-10 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-full mr-3 overflow-hidden">
-                  <img src='./profile.jpeg' alt="Profile" className="w-full h-full object-cover"/>
+                  <Image src='/profile.jpeg' alt="Profile" width={40} height={40} className="w-full h-full object-cover"/>
                 </div>
                 <span className="font-medium text-gray-900 dark:text-gray-100">About Me — Mahenoor Salat</span>
                 <FontAwesomeIcon icon={faArrowRight} className="ml-2 text-gray-900 dark:text-gray-100" />
@@ -226,7 +228,7 @@ const Home = () => {
         
          {/* Projects & Testimonials */}    
             <section className="px-4">
-          <div className="max-w-6xl mx-auto space-y-16">
+         <div className="max-w-6xl mx-auto space-y-16">
             <div className="w-full"> {/* Full-width image */}
                <div className="w-90% h-[100%] lg:h-[600px] overflow-hidden rounded-2xl"> <img src="./Banner.png" alt="Project Banner" className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105" /> </div> </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -240,7 +242,7 @@ const Home = () => {
                 title="AOSSIE: DeFi Platform Redesign & Development"
                 subtitle="AOSSIE DeFi Platform"
                 description="I redesigned and developed the AOSSIE landing page and dashboard..."
-                image="./project.png"
+                image="/project.png"
                 link="View Project"
                 linkUrl="https://aossie.org/"
               />
@@ -249,7 +251,7 @@ const Home = () => {
                 title="QuickCart: Fast & Scalable eCommerce Platform"
                 subtitle="QuickCart eCommerce"
                 description="Developed and optimized QuickCart, an eCommerce platform built for speed..."
-                image="./project1.png"
+                image="/project1.png"
                 link="View Project"
                 linkUrl="https://neo-byte.vercel.app/"
               />
@@ -262,7 +264,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-  
- 

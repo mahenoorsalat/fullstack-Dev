@@ -82,7 +82,8 @@ const Work = () => {
                     <Image
                       src="/profile.jpeg"
                       alt="collaborator"
-                      fill
+                      height={20}
+                      width={20}
                       className="object-cover"
                     />
                   </div>
