@@ -107,21 +107,25 @@ const About = () => {
 
   return (
    <>
-      <Head>
-        <title>Mahenoor Salat | Frontend & Backend Developer, Designer, SEO Specialist</title>
-        <meta name="description" content="Mahenoor Salat is a versatile developer and designer specializing in frontend and backend development, UI/UX design, SEO optimization, and video editing. Active on GitHub, Fiverr, and Upwork delivering professional solutions." />
-        <meta name="keywords" content="Frontend Developer, Backend Developer, UI/UX Designer, SEO Specialist, Video Editor, React Developer, Next.js, Tailwind CSS, Supabase, Vercel, GitHub, Fiverr, Upwork, Multimedia Developer, Web Developer, Fullstack Developer" />
-        <meta name="author" content="Mahenoor Salat" />
-        <meta property="og:title" content="Mahenoor Salat | Frontend & Backend Developer, Designer, SEO Specialist" />
-        <meta property="og:description" content="Building high-performance web applications and visually compelling digital experiences. Expert in frontend/backend development, UI/UX design, SEO, and multimedia production." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.linkedin.com/in/salat-mahenoor/" />
-        <meta property="og:image" content="https://images.pexels.com/photos/9969147/pexels-photo-9969147.jpeg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mahenoor Salat | Frontend & Backend Developer, Designer, SEO Specialist" />
-        <meta name="twitter:description" content="Expert in frontend/backend development, UI/UX design, SEO, video editing, and freelancing platforms like GitHub, Fiverr, and Upwork." />
-        <meta name="twitter:image" content="https://images.pexels.com/photos/9969147/pexels-photo-9969147.jpeg" />
-      </Head>
+     <Head>
+  <title>About | Mahenoor Salat — Developer, Designer & SEO Specialist</title>
+  <meta
+    name="description"
+    content="Learn about Mahenoor Salat’s story, skills, techniques, and journey as a developer, designer, SEO & video expert. Let’s build something amazing together."
+  />
+  <meta name="author" content="Mahenoor Salat" />
+
+  <meta property="og:title" content="About | Mahenoor Salat" />
+  <meta property="og:description" content="Meet Mahenoor Salat — Full-Stack Dev, UI/UX Designer, SEO & Video Professional." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://yourdomain.com/path-to-about-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About | Mahenoor Salat" />
+  <meta name="twitter:description" content="Meet Mahenoor Salat — Full-Stack Dev, UI/UX Designer, SEO & Video Professional." />
+  <meta name="twitter:image" content="https://yourdomain.com/path-to-about-image.jpg" />
+</Head>
+
     <div className="min-h-screen bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
          <div
         className={`absolute -top-32 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1500px] h-[1500px] pointer-events-none rounded-full overflow-hidden transition-all duration-[3000ms] ease-out ${

@@ -121,47 +121,24 @@ const Work = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
-      <Head>
-        <title>
-          Mahenoor Salat | Web & App Developer | UI/UX & SEO Expert
-        </title>
-        <meta
-          name="description"
-          content="Explore Mahenoor Salat projects. Full-Stack Web & App Developer, UI/UX Designer, SEO Expert, Video Editor, Hackathon Winner, GSoC Contributor. Building digital experiences that sell."
-        />
-        <meta
-          name="keywords"
-          content="Web Developer, App Developer, Full Stack, Frontend, Backend, UI/UX, SEO, Video Editing, Hackathon Winner, GSoC, Digital Experience"
-        />
-        <meta name="author" content="Mahenoor Salat" />
-        <meta
-          property="og:title"
-          content="Mahenoor Salat | Web & App Developer | UI/UX & SEO Expert"
-        />
-        <meta
-          property="og:description"
-          content="Explore Mahenoor Salat portfolio projects and digital creations. Full-Stack Developer, UI/UX Designer, SEO Expert, and Hackathon Winner."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/work" />
-        <meta
-          property="og:image"
-          content="https://images.pexels.com/photos/300857/pexels-photo-300857.jpeg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Mahenoor Salat | Web & App Developer | UI/UX & SEO Expert"
-        />
-        <meta
-          name="twitter:description"
-          content="Check out Mahenoor Salat's projects and digital experiences. Full-Stack Developer, UI/UX Designer, SEO Expert, Hackathon Winner."
-        />
-        <meta
-          name="twitter:image"
-          content="https://images.pexels.com/photos/300857/pexels-photo-300857.jpeg"
-        />
-      </Head>
+ <Head>
+  <title>Projects | Mahenoor Salat — Portfolio & Case Studies</title>
+  <meta
+    name="description"
+    content="Browse projects by Mahenoor Salat — web apps, UI/UX designs, SEO implementations, full stack work, and more. See technical details and results."
+  />
+  <meta name="author" content="Mahenoor Salat" />
+
+  <meta property="og:title" content="Projects | Mahenoor Salat" />
+  <meta property="og:description" content="Explore Mahenoor Salat’s portfolio: full stack apps, design case studies, SEO strategies, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thefullstack-dev.vercel.app/projects" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects | Mahenoor Salat" />
+  <meta name="twitter:description" content="Explore Mahenoor Salat’s portfolio: full stack apps, design case studies, SEO strategies, and more." />
+</Head>
+
 
       {/* Animated Background */}
       <div
@@ -240,6 +217,17 @@ const Work = () => {
             hasViewProject={true}
             imageSrc="/project4.png"
             projectUrl="https://www.empireresults.com/"
+            delay={600}
+          />
+
+           {/* Project 3 */}
+          <ProjectCard
+            title="Sone Doll , JP Website"
+            description="Crafted a Japanese-inspired landing page for Sone Doll, blending modern UI/UX with cultural aesthetics. Implemented responsive frontend, seamless backend integration, and SEO optimization to ensure performance and visibility."
+            collaborators={[1]}
+            hasViewProject={true}
+            imageSrc="/project5.png"
+            projectUrl="https://sone-doll-rkweb.vercel.app/"
             delay={600}
           />
         </div>

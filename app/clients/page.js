@@ -273,49 +273,55 @@ feedback: "I am so surprised again. She is very talented and professional design
 
   return (
 <>
-  <Head>
-        <title>Mahenoor Salat | Trusted Web & App Developer | Client Testimonials</title>
-        <meta
-          name="description"
-          content="Discover what clients worldwide say about Mahenoor Salat. Full-Stack Web & App Developer, UI/UX Designer, SEO Expert, Video Editor. Delivering high-quality projects that impress and retain clients."
-        />
-        <meta
-          name="keywords"
-          content="Client Testimonials, Web Developer, Frontend Developer, Backend Developer, UI/UX Designer, SEO Optimizer, Video Editor, Freelance Developer, Trusted Developer, Project Portfolio"
-        />
-        <meta name="author" content="Mahenoor Salat" />
+<Head>
+  <title>
+    Testimonials & Contact | Mahenoor Salat — Hire Web Developer, Designer & SEO Expert
+  </title>
+  <meta
+    name="description"
+    content="Read client testimonials and get in touch with Mahenoor Salat. Full-Stack Web & App Developer, UI/UX Designer, SEO Specialist, and Video Editor — trusted by clients worldwide."
+  />
+  <meta
+    name="keywords"
+    content="Client Testimonials, Contact Web Developer, Hire UI/UX Designer, SEO Expert, Video Editor, Freelance Developer, Full Stack Developer, Trusted Developer, Hire Web Designer"
+  />
+  <meta name="author" content="Mahenoor Salat" />
 
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content="Mahenoor Salat | Trusted Web & App Developer | Client Testimonials"
-        />
-        <meta
-          property="og:description"
-          content="See what clients and collaborators say about working with Mahenoor Salat. Expert in Web Development, UI/UX, SEO, and Video Editing."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/clients" />
-        <meta
-          property="og:image"
-          content="https://images.pexels.com/photos/300857/pexels-photo-300857.jpeg"
-        />
+  {/* Open Graph */}
+  <meta
+    property="og:title"
+    content="Testimonials & Contact | Mahenoor Salat — Hire Developer & Designer"
+  />
+  <meta
+    property="og:description"
+    content="Discover client testimonials and connect with Mahenoor Salat. Trusted Full-Stack Developer, UI/UX Designer, SEO Expert, and Video Editor."
+  />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:url"
+    content="https://thefullstack-dev.vercel.app/testimonials-contact"
+  />
+  <meta
+    property="og:image"
+    content="https://images.pexels.com/photos/300857/pexels-photo-300857.jpeg"
+  />
 
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Mahenoor Salat | Trusted Web & App Developer | Client Testimonials"
-        />
-        <meta
-          name="twitter:description"
-          content="Read reviews and feedback from clients worldwide about Mahenoor Salat&apos;s work as a Web & App Developer, UI/UX Designer, SEO Optimizer, and Video Editor."
-        />
-        <meta
-          name="twitter:image"
-          content="https://images.pexels.com/photos/300857/pexels-photo-300857.jpeg"
-        />
-      </Head>
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Testimonials & Contact | Mahenoor Salat"
+  />
+  <meta
+    name="twitter:description"
+    content="See client feedback and hire Mahenoor Salat for Web Development, UI/UX Design, SEO, and Video Editing."
+  />
+  <meta
+    name="twitter:image"
+    content="https://images.pexels.com/photos/300857/pexels-photo-300857.jpeg"
+  />
+</Head>
+
 
     <div className="min-h-screen bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
       {/* Background Blur */}

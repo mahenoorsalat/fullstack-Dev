@@ -33,9 +33,6 @@ const Home = () => {
 
    const ProjectCard = ({ title, subtitle, description, image, link, linkUrl }) => (
     <div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
       className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl transition-all duration-700"
     >
       <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 relative overflow-hidden">
@@ -145,9 +142,26 @@ feedback: "I am so surprised again. She is very talented and professional design
 
   return (
     <>
-      <Head>
-        <title>Mahenoor Salat | UI/UX Designer & Web Developer | SEO & Video Editing</title>
-      </Head>
+    <Head>
+  <title>Mahenoor Salat | Full-Stack Developer • UI/UX Designer • SEO & Video Expert</title>
+  <meta
+    name="description"
+    content="Mahenoor Salat is a Full-Stack Web & App Developer, UI/UX Designer, SEO optimizer, and video editor. Hire me to build high-impact, user-friendly digital experiences."
+  />
+  <meta name="author" content="Mahenoor Salat" />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="Mahenoor Salat | Full-Stack Developer & Designer" />
+  <meta property="og:description" content="Full-Stack Development, UI/UX Design, SEO, Video Editing — delivering professional digital solutions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thefullstack-dev.vercel.app/" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mahenoor Salat | Full-Stack Developer & Designer" />
+  <meta name="twitter:description" content="Full-Stack Development, UI/UX Design, SEO, Video Editing — delivering professional digital solutions." />
+</Head>
+
 
       <div className="min-h-screen bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
         
