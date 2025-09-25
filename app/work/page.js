@@ -127,7 +127,7 @@ const Work = () => {
         </title>
         <meta
           name="description"
-          content="Explore Mahenoor Salat's projects. Full-Stack Web & App Developer, UI/UX Designer, SEO Expert, Video Editor, Hackathon Winner, GSoC Contributor. Building digital experiences that sell."
+          content="Explore Mahenoor Salat projects. Full-Stack Web & App Developer, UI/UX Designer, SEO Expert, Video Editor, Hackathon Winner, GSoC Contributor. Building digital experiences that sell."
         />
         <meta
           name="keywords"
@@ -140,7 +140,7 @@ const Work = () => {
         />
         <meta
           property="og:description"
-          content="Explore Mahenoor Salat's portfolio projects and digital creations. Full-Stack Developer, UI/UX Designer, SEO Expert, and Hackathon Winner."
+          content="Explore Mahenoor Salat portfolio projects and digital creations. Full-Stack Developer, UI/UX Designer, SEO Expert, and Hackathon Winner."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourwebsite.com/work" />

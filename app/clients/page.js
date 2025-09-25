@@ -497,7 +497,7 @@ className="py-20 px-4 max-w-6xl mx-auto relative z-10"      >
                 {/* Submit Status */}
                 {submitStatus === 'success' && (
                   <div className="bg-green-100 dark:bg-green-900/50 border border-green-200 dark:border-green-700 text-green-700 dark:text-green-300 px-4 py-3 rounded-lg">
-                    Thank you! Your message has been sent successfully. I'll get back to you soon.
+                    Thank you! Your message has been sent successfully. I will get back to you soon.
                   </div>
                 )}
 
