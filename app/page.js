@@ -90,7 +90,7 @@ const Home = () => {
         <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">{rating}.0</span>
       </div>
 
-      <p className={`text-gray-600 dark:text-gray-300 mb-6 ${featured ? 'text-lg' : 'text-base'}`}>"{feedback}"</p>
+      <p className={`text-gray-600 dark:text-gray-300 mb-6 ${featured ? 'text-lg' : 'text-base'}`}>{feedback}</p>
 
       <div className="flex items-center space-x-4">
         <div className="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 rounded-full flex items-center justify-center overflow-hidden">
