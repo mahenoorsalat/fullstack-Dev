@@ -217,8 +217,8 @@ const testimonials = [
     avatar: "/testimonial-8.png",  // ✅ fixed
     role: "Project Manager",
     company: "Ukraine",
-    feedback:
-      "I&apos;m so surprised again. She&apos;s very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
+   feedback: "I&apos;m so surprised again. She&apos;s very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
+
     rating: 5,
   },
   {
