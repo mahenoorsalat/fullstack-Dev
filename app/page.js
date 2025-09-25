@@ -127,7 +127,8 @@ const Home = () => {
     avatar: "/testimonial-8.png",  // ✅ fixed
     role: "Project Manager",
     company: "Ukraine",
-feedback: "I&apos;m so surprised again. She&apos;s very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
+feedback: "I am so surprised again. She is very talented and professional designer. Just Recommend her as designer. Thanks Mahi.",
+
 
     rating: 5,
   },
@@ -207,7 +208,7 @@ feedback: "I&apos;m so surprised again. She&apos;s very talented and professiona
                 Building bridges between design and code
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
-                Hi, I&apos;m <strong>Mahenoor Salat</strong> — a passionate <strong>UI/UX designer</strong>, <strong>frontend & backend developer</strong>, and <strong>SEO optimizer</strong>. I build websites that are visually engaging, technically robust, and optimized for search engines.
+                Hi, I am <strong>Mahenoor Salat</strong> — a passionate <strong>UI/UX designer</strong>, <strong>frontend & backend developer</strong>, and <strong>SEO optimizer</strong>. I build websites that are visually engaging, technically robust, and optimized for search engines.
               </p>
 
               {/* About Me Button */}
@@ -230,7 +231,10 @@ feedback: "I&apos;m so surprised again. She&apos;s very talented and professiona
             <section className="px-4">
          <div className="max-w-6xl mx-auto space-y-16">
             <div className="w-full"> {/* Full-width image */}
-               <div className="w-90% h-[100%] lg:h-[600px] overflow-hidden rounded-2xl"> <img src="./Banner.png" alt="Project Banner" className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105" /> </div> </div>
+               <div className="w-90% h-[100%] lg:h-[600px] overflow-hidden rounded-2xl"> 
+<Image src="/Banner.png" alt="Project Banner" width={1000} height={600} className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105" />
+                
+                </div> </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
                 <TestimonialCard key={index} {...testimonial} />
