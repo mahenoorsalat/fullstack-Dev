@@ -509,30 +509,31 @@ className="py-20 px-4 max-w-6xl mx-auto relative z-10"      >
 
                 {submitStatus === 'error' && (
                   <div className="bg-red-100 dark:bg-red-900/50 border border-red-200 dark:border-red-700 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg">
-                    Sorry, there was an error sending your message. Please try again or contact me directly.
+                    Sorry, there was an error sending your message. Please try again or contact me directly on salatmahenoor7.8.6@gmail.com !
                   </div>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="group w-full flex items-center justify-center px-6 py-4 bg-black text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
-                >
-                  {/* Button shine effect */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
-                  
-                  {isSubmitting ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </>
-                  )}
-                </button>
+              <button
+  type="submit"
+  disabled={isSubmitting}
+  className="group md:w-fit w-full flex items-center justify-center px-6 py-4 bg-black text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+>
+  {/* Button shine effect */}
+  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none" />
+  
+  {isSubmitting ? (
+    <>
+      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+      Sending...
+    </>
+  ) : (
+    <>
+      Send Message
+      <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+    </>
+  )}
+</button>
+
               </form>    
                 </section>
     </div>
