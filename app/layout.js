@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 // 1. IMPORT VERCEL TOOLS
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/Footer/page";
 import Navbar from "@/components/Navbar/page";
