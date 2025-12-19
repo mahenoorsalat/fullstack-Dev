@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, ExternalLink, Star, Quote } from 'lucide-react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from 'next/image';
 
 const Home = () => {
