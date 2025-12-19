@@ -5,7 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/Footer/page";
 import Navbar from "@/components/Navbar/page";
 import { ThemeProvider } from "next-themes";
-
+import SmoothScroll from "@/components/SmoothScroll"; 
+import PageWrapper from "@/components/PageWrapper";   
 const inter = Inter({ subsets: ["latin"] });
 
 // 2. SEO METADATA
@@ -124,26 +125,29 @@ export default function RootLayout({ children }) {
     ]
   };
 
-  return (
+return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        {/* ... (keep jsonLd script) ... */}
         
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          storageKey="theme"
-        >
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <SmoothScroll> {/* 1. Wrap everything in SmoothScroll */}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            storageKey="theme"
+          >
+            <Navbar />
+            <main>
+               {/* 2. Wrap main content in PageWrapper for animation */}
+               <PageWrapper>
+                  {children}
+               </PageWrapper>
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </SmoothScroll>
 
-        {/* VERCEL ANALYTICS */}
         <Analytics />
         <SpeedInsights />
       </body>
