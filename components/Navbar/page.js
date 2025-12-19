@@ -21,61 +21,62 @@ const Navbar = () => {
     return () => clearInterval(interval);
   }, []);
 
-const NavItem = ({ icon, label, href }) => {
-  const isActive = pathname === href;
+  const NavItem = ({ icon, label, href }) => {
+    const isActive = pathname === href;
 
-  return (
-    <Link href={href}>
-      <motion.div
-        initial={{ scale: 1, opacity: 0.9 }}
-        whileHover={{
-          scale: 1.15,
-          opacity: 1,
-          backgroundColor: theme === "dark" ? "rgba(55,65,81,0.8)" : "rgba(239,239,239,0.9)",
-          boxShadow: theme === "dark"
-            ? "0 4px 15px rgba(255,255,255,0.15)"
-            : "0 4px 15px rgba(0,0,0,0.15)",
-        }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className={`group flex flex-col sm:flex-row items-center justify-center sm:justify-start 
-          px-3 sm:px-4 py-2 rounded-full cursor-pointer border
-          transition-colors duration-300
-          ${
-            isActive
-              ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md"
-              : "border-transparent text-gray-700 dark:text-gray-300"
-          }`}
-      >
-        <div
-          className={`flex items-center justify-center w-6 h-6 duration-300 ${
-            isActive ? "text-white" : "text-gray-700 dark:text-gray-300"
-          }`}
+    return (
+      <Link href={href}>
+        <motion.div
+          initial={{ scale: 1, opacity: 0.9 }}
+          whileHover={{
+            scale: 1.15,
+            opacity: 1,
+            backgroundColor: theme === "dark" ? "rgba(55,65,81,0.8)" : "rgba(239,239,239,0.9)",
+            boxShadow: theme === "dark"
+              ? "0 4px 15px rgba(255,255,255,0.15)"
+              : "0 4px 15px rgba(0,0,0,0.15)",
+          }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className={`group flex flex-col sm:flex-row items-center justify-center sm:justify-start 
+            px-3 sm:px-4 py-2 rounded-full cursor-pointer border
+            transition-colors duration-300
+            ${
+              isActive
+                ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md"
+                : "border-transparent text-gray-700 dark:text-gray-300"
+            }`}
         >
-          {icon}
-        </div>
-        <span
-          className={`text-sm font-medium mt-1 sm:mt-0 sm:ml-2 hidden sm:inline-block ${
-            isActive ? "text-white" : ""
-          }`}
-        >
-          {label}
-        </span>
-      </motion.div>
-    </Link>
-  );
-};
-
+          <div
+            className={`flex items-center justify-center w-6 h-6 duration-300 ${
+              isActive ? "text-white" : "text-gray-700 dark:text-gray-300"
+            }`}
+          >
+            {icon}
+          </div>
+          <span
+            className={`text-sm font-medium mt-1 sm:mt-0 sm:ml-2 hidden sm:inline-block ${
+              isActive ? "text-white" : ""
+            }`}
+          >
+            {label}
+          </span>
+        </motion.div>
+      </Link>
+    );
+  };
 
   return (
     <>
-      {/* Navbar */}
-      <nav className="fixed bottom-4 sm:top-4 left-1/2 transform -translate-x-1/2 z-50">
+      {/* Navbar Container */}
+      {/* Added pointer-events-none to the container so it doesn't block clicks on the page */}
+      <nav className="fixed bottom-4 sm:top-4 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-3xl border border-gray-200/50 dark:border-gray-700/50 shadow-xl px-2 py-1 flex justify-between space-x-1 transition-all duration-500"
+          // Added pointer-events-auto here to make the actual navbar buttons clickable
+          className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-3xl border border-gray-200/50 dark:border-gray-700/50 shadow-xl px-2 py-1 flex justify-between space-x-1 transition-all duration-500 pointer-events-auto"
         >
           <NavItem
             href="/"
@@ -157,13 +158,14 @@ const NavItem = ({ icon, label, href }) => {
       </nav>
 
       {/* Time & Location */}
+      {/* Added pointer-events-none to container and auto to text to prevent blocking corners */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="fixed top-4 left-4 z-40"
+        className="fixed top-4 left-4 z-40 pointer-events-none"
       >
-        <span className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 cursor-pointer">
+        <span className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 cursor-pointer pointer-events-auto">
           Asia/India
         </span>
       </motion.div>
@@ -171,9 +173,9 @@ const NavItem = ({ icon, label, href }) => {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="fixed top-4 right-4 z-40"
+        className="fixed top-4 right-4 z-40 pointer-events-none"
       >
-        <span className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 cursor-pointer font-mono">
+        <span className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 cursor-pointer font-mono pointer-events-auto">
           {time}
         </span>
       </motion.div>

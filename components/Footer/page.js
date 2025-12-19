@@ -103,7 +103,7 @@ const UpworkIcon = () => (
               <span>© 2025 /</span>
               <span className="text-gray-900 dark:text-gray-100 font-medium hover:text-black dark:hover:text-white transition-colors duration-300">Mahenoor Salat</span>
               <span>/ Designer , Dev , SEO & Editor</span>
-              <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-300 hover:underline">Once UI</a>
+              <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-300 hover:underline">~ ALL IN ONE</a>
             </div>
 
             <div className="flex items-center space-x-4">

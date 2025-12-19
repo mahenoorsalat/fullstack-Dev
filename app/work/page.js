@@ -194,18 +194,18 @@ const Work = () => {
             collaborators={[1]}
             hasViewProject={true}
             imageSrc="/project2.png"
-            projectUrl="https://www.gfe.foundation/"
+            projectUrl="https://human-ink.vercel.app/"
             delay={200}
           />
 
           {/* Project 2 */}
           <ProjectCard
-            title="AI Chatbot Platform"
-            description="Developed an advanced AI chatbot platform with complete frontend, backend, design, and SEO work."
+            title="Bimble"
+            description="Developed an advanced Can platform with complete frontend, backend, design, and SEO work."
             collaborators={[1]}
             hasViewProject={true}
             imageSrc="/project3.png"
-            projectUrl="https://link-spark-chat-bot.vercel.app/"
+            projectUrl="https://bimble-zeta.vercel.app/"
             delay={400}
           />
 

@@ -1,73 +1,78 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+// 1. IMPORT VERCEL TOOLS
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/Footer/page";
 import Navbar from "@/components/Navbar/page";
 import { ThemeProvider } from "next-themes";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+// 2. KEEP THE SEO METADATA (This brings the traffic!)
 export const metadata = {
-  title: "Mahenoor Salat | Full-Stack Developer, UI/UX Designer & SEO Expert",
-  description:
-    "Mahenoor Salat is a versatile Full-Stack Web & App Developer, UI/UX Designer, SEO Specialist, and Video Editor. Delivering high-performance websites, apps, and digital solutions.",
-  authors: [{ name: "Mahenoor Salat", url: "https://thefullstack-dev.vercel.app" }],
+  title: {
+    default: "Mahenoor | Full Stack Developer & UI/UX Designer",
+    template: "%s | Mahenoor Portfolio"
+  },
+  description: "Experienced Full Stack Developer and UI/UX Designer. Specializing in Next.js, React, Mobile Apps, and Brand Design. Hire me for custom web development.",
   keywords: [
-    "Full Stack Developer",
-    "Web Developer",
-    "App Developer",
-    "UI/UX Designer",
-    "SEO Specialist",
-    "Video Editor",
-    "Freelance Developer",
-    "Hire Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Portfolio",
+    "Full Stack Developer", 
+    "UI/UX Designer", 
+    "React Developer", 
+    "Next.js 14", 
+    "Freelance Web Developer", 
+    "Mobile App Development", 
+    "Figma to Code",
+    "Hire Developer India" 
   ],
+  authors: [{ name: "Mahenoor" }],
+  creator: "Mahenoor",
   openGraph: {
-    title: "Mahenoor Salat | Full-Stack Developer, UI/UX Designer & SEO Expert",
-    description:
-      "Hire Mahenoor Salat for Web & App Development, UI/UX Design, SEO, and Video Editing. Trusted freelancer with professional digital solutions.",
-    url: "https://thefullstack-dev.vercel.app",
-    siteName: "Mahenoor Salat Portfolio",
+    type: "website",
+    locale: "en_US",
+    url: "https://your-vercel-domain.vercel.app", // REPLACE THIS with your actual Vercel link
+    title: "Mahenoor | Full Stack Developer & UI/UX Designer",
+    description: "Building high-performance websites and mobile apps. View my portfolio.",
+    siteName: "Mahenoor Portfolio",
     images: [
       {
-        url: "https://images.pexels.com/photos/9969147/pexels-photo-9969147.jpeg",
+        url: "/Banner.png", 
         width: 1200,
         height: 630,
-        alt: "Mahenoor Salat Portfolio",
+        alt: "Mahenoor Portfolio Banner",
       },
     ],
-    type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mahenoor Salat | Full-Stack Developer, UI/UX Designer & SEO Expert",
-    description:
-      "Explore the portfolio of Mahenoor Salat — Full-Stack Developer, UI/UX Designer, SEO Specialist, and Video Editor.",
-    images: [
-      "https://images.pexels.com/photos/9969147/pexels-photo-9969147.jpeg",
-    ],
-  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({ children }) {
+  // 3. KEEP JSON-LD (This helps Google understand who you are)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mahenoor",
+    "url": "https://your-vercel-domain.vercel.app",
+    "jobTitle": "Full Stack Developer",
+    "sameAs": [
+      "https://www.linkedin.com/in/your-profile", 
+      "https://github.com/mahenoorsalat"
+    ],
+    "knowsAbout": ["Web Development", "UI/UX Design", "React", "Next.js"]
+  };
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en">
+      <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -78,6 +83,10 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </ThemeProvider>
+
+        {/* 4. ADD VERCEL ANALYTICS COMPONENTS HERE */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
