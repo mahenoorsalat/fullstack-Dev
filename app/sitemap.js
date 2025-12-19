@@ -1,23 +1,30 @@
 export default function sitemap() {
+  const baseUrl = 'https://thefullstack-dev.vercel.app';
+
   return [
     {
-      url: 'https://thefullstack-dev.vercel.app',
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: 'https://thefullstack-dev.vercel.app/work',
+      url: `${baseUrl}/work`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://thefullstack-dev.vercel.app/about',
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/clients`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
   ]
 }
-

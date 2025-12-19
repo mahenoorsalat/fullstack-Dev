@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-// 1. IMPORT VERCEL TOOLS
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/Footer/page";
@@ -9,64 +8,124 @@ import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// 2. KEEP THE SEO METADATA (This brings the traffic!)
+// 2. SEO METADATA
 export const metadata = {
+  // CRITICAL: Fixes OG Image issues
+  metadataBase: new URL('https://thefullstack-dev.vercel.app'), 
+  
   title: {
-    default: "Mahenoor | Full Stack Developer & UI/UX Designer",
+    default: "Mahenoor | Full Stack & AI Developer | UI/UX Designer",
     template: "%s | Mahenoor Portfolio"
   },
-  description: "Experienced Full Stack Developer and UI/UX Designer. Specializing in Next.js, React, Mobile Apps, and Brand Design. Hire me for custom web development.",
+  
+  description: "Expert Full Stack Developer & AI Engineer specializing in Next.js, Python, and Custom AI Agents. Building scalable SaaS, Automation Pipelines, and high-performance Web3 apps for global startups.",
+  
+  // 3. RICH KEYWORDS (Mix of Broad & Long-Tail for Global Reach)
   keywords: [
+    // Core Roles
     "Full Stack Developer", 
+    "AI Engineer",
     "UI/UX Designer", 
-    "React Developer", 
+    "Backend Developer",
+
+    // High-Value / Low-Competition (Long Tail)
+    "Hire Next.js Developer India",
+    "Custom AI Agent Development",
+    "Python Automation Expert",
+    "SaaS MVP Development Service",
+    "Figma to React Code",
+    "Django REST Framework Expert",
+    "Web3 Dashboard Developer",
+    
+    // Tech Stack Specific
+    "React.js", 
     "Next.js 14", 
-    "Freelance Web Developer", 
-    "Mobile App Development", 
-    "Figma to Code",
-    "Hire Developer India" 
+    "TypeScript",
+    "Python",
+    "FastAPI",
+    "OpenAI API Integration",
+    "LangChain Developer",
+    "Tailwind CSS",
+    "GSAP Animations"
   ],
+  
   authors: [{ name: "Mahenoor" }],
   creator: "Mahenoor",
+  
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-vercel-domain.vercel.app", // REPLACE THIS with your actual Vercel link
-    title: "Mahenoor | Full Stack Developer & UI/UX Designer",
-    description: "Building high-performance websites and mobile apps. View my portfolio.",
+    url: "/",
+    title: "Mahenoor | Build Custom AI Agents & Web Apps",
+    description: "Looking for a developer? I build AI-powered web apps, custom agents, and stunning UI/UX designs. Let's automate your business.",
     siteName: "Mahenoor Portfolio",
     images: [
       {
         url: "/Banner.png", 
         width: 1200,
         height: 630,
-        alt: "Mahenoor Portfolio Banner",
+        alt: "Mahenoor - Full Stack & AI Developer Portfolio",
       },
     ],
   },
+  
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  
+  // Verification for search consoles (Optional but recommended)
+  verification: {
+    google: 'YOUR_GOOGLE_VERIFICATION_CODE', // Add this if you have one
   }
 };
 
 export default function RootLayout({ children }) {
-  // 3. KEEP JSON-LD (This helps Google understand who you are)
+  // 4. JSON-LD (Structured Data for Google)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Mahenoor",
-    "url": "https://your-vercel-domain.vercel.app",
-    "jobTitle": "Full Stack Developer",
+    "url": "https://thefullstack-dev.vercel.app",
+    "jobTitle": "Senior Full Stack & AI Developer",
+    "description": "Versatile Full-Stack Developer and UI/UX Designer skilled in MERN, Next.js, Django, Python, and AI/ML fundamentals.",
+    "email": "salatmahenoor7.8.6@gmail.com",
+    "telephone": "+919510944489",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "India"
+    },
     "sameAs": [
-      "https://www.linkedin.com/in/your-profile", 
-      "https://github.com/mahenoorsalat"
+      "https://www.linkedin.com/in/salat-mahenoor/", 
+      "https://github.com/mahenoorsalat",
+      // Add your Upwork/Fiverr URLs here if you have them so Google links them!
+      // "https://www.upwork.com/freelancers/~YOUR_ID",
+      // "https://www.fiverr.com/YOUR_USERNAME"
     ],
-    "knowsAbout": ["Web Development", "UI/UX Design", "React", "Next.js"]
+    "knowsAbout": [
+      "Web Development", 
+      "UI/UX Design", 
+      "Artificial Intelligence",
+      "Machine Learning",
+      "AI Agents",
+      "Automation",
+      "Next.js",
+      "React",
+      "Python",
+      "Django",
+      "Blockchain"
+    ]
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <script
           type="application/ld+json"
@@ -80,11 +139,11 @@ export default function RootLayout({ children }) {
           storageKey="theme"
         >
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
         </ThemeProvider>
 
-        {/* 4. ADD VERCEL ANALYTICS COMPONENTS HERE */}
+        {/* VERCEL ANALYTICS */}
         <Analytics />
         <SpeedInsights />
       </body>

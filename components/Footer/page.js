@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useRouter } from 'next/navigation';
@@ -8,46 +8,33 @@ import Image from 'next/image';
 
 const Footer = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const router = useRouter();
 
-const FiverrIcon = () => (
- <Image src='/fiverr.svg' alt="Fiverr" width={16} height={16} className='w-4 h-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'/>
-);
+  // Optimized Icons (Clean code)
+  const FiverrIcon = () => (
+   <Image src='/fiverr.svg' alt="Fiverr" width={16} height={16} className='w-4 h-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'/>
+  );
 
-const UpworkIcon = () => (
- <Image src='/upwork.svg' alt="Upwork" width={16} height={16} className='w-4 h-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'/>
-);
-
-  useEffect(() => {
-    const timer1 = setTimeout(() => setIsLoaded(true), 100);
-
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: (e.clientY / window.innerHeight) * 2 - 1
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      clearTimeout(timer1);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  const UpworkIcon = () => (
+   <Image src='/upwork.svg' alt="Upwork" width={16} height={16} className='w-4 h-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'/>
+  );
 
   const handleContactClick = () => {
     router.push('/clients#contact');
   };
 
+  // ADDED LABELS FOR ACCESSIBILITY
   const socials = [
-    { icon: <FontAwesomeIcon icon={faGithub} />, link: "https://github.com/mahenoorsalat" },
-    { icon: <FontAwesomeIcon icon={faLinkedin} />, link: "https://www.linkedin.com/in/salat-mahenoor/" },
-    { icon: <FiverrIcon />, link: "https://www.fiverr.com/salat_mahenoor?source=gig_page" },
-    { icon: <UpworkIcon />, link: "https://www.upwork.com/freelancers/~017b36696fdb312255" },
-    { icon: <FontAwesomeIcon icon={faYoutube} />, link: "https://www.youtube.com/@MahenoorSalat" },
+    { icon: <FontAwesomeIcon icon={faGithub} />, link: "https://github.com/mahenoorsalat", label: "GitHub" },
+    { icon: <FontAwesomeIcon icon={faLinkedin} />, link: "https://www.linkedin.com/in/salat-mahenoor/", label: "LinkedIn" },
+    { icon: <FiverrIcon />, link: "https://www.fiverr.com/salat_mahenoor?source=gig_page", label: "Fiverr" },
+    { icon: <UpworkIcon />, link: "https://www.upwork.com/freelancers/~017b36696fdb312255", label: "Upwork" },
+    { icon: <FontAwesomeIcon icon={faYoutube} />, link: "https://www.youtube.com/@MahenoorSalat", label: "YouTube" },
   ];
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <div className='bg-white dark:bg-gray-900 transition-colors duration-300'>
@@ -70,12 +57,10 @@ const UpworkIcon = () => (
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-            
-
-
                 <button
                   onClick={handleContactClick}
                   className="group relative px-6 py-3 rounded-xl font-semibold overflow-hidden transition-all duration-300 cursor-pointer bg-black dark:bg-white dark:text-black text-white border border-gray-700/50 dark:border-blue-500/50 shadow-sm hover:shadow-lg hover:scale-105"
+                  aria-label="Contact Mahenoor"
                 >
                   {/* Shiny hover layers */}
                   <div className="absolute inset-0 overflow-hidden rounded-xl">
@@ -103,7 +88,6 @@ const UpworkIcon = () => (
               <span>© 2025 /</span>
               <span className="text-gray-900 dark:text-gray-100 font-medium hover:text-black dark:hover:text-white transition-colors duration-300">Mahenoor Salat</span>
               <span>/ Designer , Dev , SEO & Editor</span>
-              <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-300 hover:underline">~ ALL IN ONE</a>
             </div>
 
             <div className="flex items-center space-x-4">
@@ -113,6 +97,7 @@ const UpworkIcon = () => (
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={social.label} // CRITICAL FOR ACCESSIBILITY SCORE
                   className="text-black dark:bg-white dark:rounded-full p-2 hover:text-gray-900 dark:hover:text-black transition-all duration-300 transform hover:scale-110"
                 >
                   {social.icon}

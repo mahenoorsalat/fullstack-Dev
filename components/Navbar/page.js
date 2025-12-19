@@ -14,7 +14,6 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsLoaded(true);
-
     const updateTime = () => setTime(new Date().toLocaleTimeString());
     updateTime();
     const interval = setInterval(updateTime, 1000);
@@ -25,7 +24,7 @@ const Navbar = () => {
     const isActive = pathname === href;
 
     return (
-      <Link href={href}>
+      <Link href={href} aria-label={label}>
         <motion.div
           initial={{ scale: 1, opacity: 0.9 }}
           whileHover={{
@@ -68,97 +67,57 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar Container */}
-      {/* Added pointer-events-none to the container so it doesn't block clicks on the page */}
       <nav className="fixed bottom-4 sm:top-4 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          // Added pointer-events-auto here to make the actual navbar buttons clickable
           className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-3xl border border-gray-200/50 dark:border-gray-700/50 shadow-xl px-2 py-1 flex justify-between space-x-1 transition-all duration-500 pointer-events-auto"
         >
           <NavItem
             href="/"
+            label="Home"
             icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h14a1 1 0 001-1V10"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h14a1 1 0 001-1V10" />
               </svg>
             }
-            label="Home"
           />
           <NavItem
             href="/about"
+            label="About"
             icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 3l9 9-9 9-9-9 9-9z"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l9 9-9 9-9-9 9-9z" />
               </svg>
             }
-            label="About"
           />
           <NavItem
             href="/work"
+            label="Work"
             icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-5 h-5">
                 <rect x="3" y="3" width="7" height="7" />
                 <rect x="14" y="3" width="7" height="7" />
                 <rect x="14" y="14" width="7" height="7" />
                 <rect x="3" y="14" width="7" height="7" />
               </svg>
             }
-            label="Work"
           />
           <NavItem
             href="/clients"
+            label="Clients"
             icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 5h14v14H5z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 9h6v6H9z" />
               </svg>
             }
-            label="Clients"
           />
         </motion.div>
       </nav>
 
       {/* Time & Location */}
-      {/* Added pointer-events-none to container and auto to text to prevent blocking corners */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}

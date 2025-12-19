@@ -189,8 +189,8 @@ const Work = () => {
 
           {/* Project 1 */}
           <ProjectCard
-            title="Blockchain Project — GFE Foundation"
-            description="End-to-end blockchain project with frontend, backend, UI/UX design, and SEO optimization."
+            title="FullStack Project — HumanInk"
+            description="End-to-end Fullstack project with frontend, backend, UI/UX design, and SEO optimization."
             collaborators={[1]}
             hasViewProject={true}
             imageSrc="/project2.png"
@@ -227,7 +227,7 @@ const Work = () => {
             collaborators={[1]}
             hasViewProject={true}
             imageSrc="/project5.png"
-            projectUrl="https://sone-doll-rkweb.vercel.app/"
+            projectUrl="https://sonedoll.vercel.app/"
             delay={600}
           />
         </div>
