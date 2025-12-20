@@ -116,7 +116,7 @@ export default function RootLayout({ children }) {
       "https://www.linkedin.com/in/salat-mahenoor/", 
       "https://github.com/mahenoorsalat",
 
-     " https://www.fiverr.com/salat_mahenoor?source=gig_page  ",
+     "https://www.fiverr.com/salat_mahenoor?source=gig_page",
      "https://www.upwork.com/freelancers/~017b36696fdb312255",
      "https://www.youtube.com/@MahenoorSalat"
 
