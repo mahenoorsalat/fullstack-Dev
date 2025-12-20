@@ -125,7 +125,7 @@ const Navbar = () => {
         className="fixed top-4 left-4 z-40 pointer-events-none"
       >
         <span className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 cursor-pointer pointer-events-auto">
-          Asia/India
+          Asia
         </span>
       </motion.div>
       <motion.div

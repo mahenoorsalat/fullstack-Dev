@@ -7,47 +7,54 @@ import Navbar from "@/components/Navbar/page";
 import { ThemeProvider } from "next-themes";
 import SmoothScroll from "@/components/SmoothScroll"; 
 import PageWrapper from "@/components/PageWrapper";   
+
 const inter = Inter({ subsets: ["latin"] });
 
 // 2. SEO METADATA
 export const metadata = {
-  // CRITICAL: Fixes OG Image issues
+  // Fixes OG Image issues
   metadataBase: new URL('https://thefullstack-dev.vercel.app'), 
   
   title: {
-    default: "Mahenoor | Full Stack & AI Developer | UI/UX Designer",
+    default: "Mahenoor | Top 1% Full Stack & AI Developer | SEO & UI/UX Expert",
     template: "%s | Mahenoor Portfolio"
   },
   
-  description: "Expert Full Stack Developer & AI Engineer specializing in Next.js, Python, and Custom AI Agents. Building scalable SaaS, Automation Pipelines, and high-performance Web3 apps for global startups.",
+  description: "Hire Mahenoor, a lovable Top-Rated Full Stack Developer & AI Engineer. Expert in Next.js, Python, and SEO. Building custom AI Agents & high-performance websites in record time. Trusted by clients on Upwork, Fiverr, and globally.",
   
-  // 3. RICH KEYWORDS (Mix of Broad & Long-Tail for Global Reach)
+  // 3. RICH KEYWORDS (Aggressive Global Targeting)
   keywords: [
-    // Core Roles
+    // 🚀 Core High-Level Roles
     "Full Stack Developer", 
     "AI Engineer",
     "UI/UX Designer", 
-    "Backend Developer",
+    "SEO Optimization Expert",
+    "Lovable Developer", // Your personal brand keyword
 
-    // High-Value / Low-Competition (Long Tail)
-    "Hire Next.js Developer India",
-    "Custom AI Agent Development",
-    "Python Automation Expert",
-    "SaaS MVP Development Service",
-    "Figma to React Code",
-    "Django REST Framework Expert",
-    "Web3 Dashboard Developer",
+    // 🌏 Global "Hire Me" Intents
+    "Hire Next.js Developer",
+    "Hire React Developer India",
+    "Top Rated Freelance Developer",
+    "Remote Software Engineer",
+    "Hire Python Expert",
     
-    // Tech Stack Specific
-    "React.js", 
-    "Next.js 14", 
-    "TypeScript",
-    "Python",
-    "FastAPI",
-    "OpenAI API Integration",
-    "LangChain Developer",
-    "Tailwind CSS",
-    "GSAP Animations"
+    // 💼 Platform Specific (Targeting people searching for these platforms)
+    "Upwork Top Rated Developer",
+    "Fiverr Pro Web Designer",
+    "Naukri Best Developer Profile",
+    "Freelance Web Developer for Startups",
+    
+    // ⚡ Specific Services ("In Minutes" / Speed)
+    "Build AI Website Fast",
+    "Custom AI Agent Development",
+    "SaaS MVP Development Service",
+    "Convert Figma to React Code",
+    "Automate Business with AI",
+    
+    // 🛠 Tech Stack Specific
+    "Next.js 14", "React.js", "TypeScript", "Python", "FastAPI", 
+    "Django REST Framework", "OpenAI API Integration", "LangChain", 
+    "Tailwind CSS", "GSAP Animations", "Web3 Dashboard"
   ],
   
   authors: [{ name: "Mahenoor" }],
@@ -57,15 +64,15 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "Mahenoor | Build Custom AI Agents & Web Apps",
-    description: "Looking for a developer? I build AI-powered web apps, custom agents, and stunning UI/UX designs. Let's automate your business.",
+    title: "Mahenoor | Build AI-Powered Web Apps Fast",
+    description: "Need a developer? I build scalable AI agents, SaaS platforms, and stunning UI/UX designs. SEO-optimized and delivered fast. Let's work together.",
     siteName: "Mahenoor Portfolio",
     images: [
       {
         url: "/Banner.png", 
         width: 1200,
         height: 630,
-        alt: "Mahenoor - Full Stack & AI Developer Portfolio",
+        alt: "Mahenoor - Top 1% Full Stack & AI Developer",
       },
     ],
   },
@@ -82,14 +89,15 @@ export const metadata = {
     },
   },
   
-  // Verification for search consoles (Optional but recommended)
+  // Verification for search consoles
   verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE', // Add this if you have one
+    google: "cMnZb7DD-LViMD84Lb68pko6L9heuvK-bCiTL7ET8Dk", 
   }
 };
 
 export default function RootLayout({ children }) {
   // 4. JSON-LD (Structured Data for Google)
+  // This tells Google who you are and connects your website to your profiles.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -103,34 +111,34 @@ export default function RootLayout({ children }) {
       "@type": "PostalAddress",
       "addressCountry": "India"
     },
+    // ✅ CRITICAL: Add your actual profile links here if you have them!
     "sameAs": [
       "https://www.linkedin.com/in/salat-mahenoor/", 
       "https://github.com/mahenoorsalat",
-      // Add your Upwork/Fiverr URLs here if you have them so Google links them!
-      // "https://www.upwork.com/freelancers/~YOUR_ID",
-      // "https://www.fiverr.com/YOUR_USERNAME"
+
+     " https://www.fiverr.com/salat_mahenoor?source=gig_page  ",
+     "https://www.upwork.com/freelancers/~017b36696fdb312255",
+     "https://www.youtube.com/@MahenoorSalat"
+
     ],
     "knowsAbout": [
-      "Web Development", 
-      "UI/UX Design", 
-      "Artificial Intelligence",
-      "Machine Learning",
-      "AI Agents",
-      "Automation",
-      "Next.js",
-      "React",
-      "Python",
-      "Django",
-      "Blockchain"
+      "Web Development", "UI/UX Design", "Artificial Intelligence",
+      "Machine Learning", "AI Agents", "Automation", "SEO",
+      "React", "Next.js", "Python", "Django", "Blockchain"
     ]
   };
 
 return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        {/* ... (keep jsonLd script) ... */}
         
-        <SmoothScroll> {/* 1. Wrap everything in SmoothScroll */}
+        {/* ✅ SEO INJECTION */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        
+        <SmoothScroll> 
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
@@ -139,7 +147,6 @@ return (
           >
             <Navbar />
             <main>
-               {/* 2. Wrap main content in PageWrapper for animation */}
                <PageWrapper>
                   {children}
                </PageWrapper>
